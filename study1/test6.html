@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test6</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 배열 리터럴
+			var arr1 = []; // 빈 배열
+			
+			document.writeln('arr1[0] : ' + arr1[0] + '<br/>');
+			document.writeln('arr1[1] : ' + arr1[1] + '<br/>');
+			document.writeln('arr1[2] : ' + arr1[2] + '<br/>');
+			document.writeln('arr1[3] : ' + arr1[3] + '<br/>');
+			document.writeln('arr1.length : ' + arr1.length + '<br/>');
+			document.writeln('<br/>');
+			
+			arr1[0] = 95;
+			arr1[2] = 100;
+			
+			document.writeln('arr1[0] : ' + arr1[0] + '<br/>');
+			document.writeln('arr1[1] : ' + arr1[1] + '<br/>');
+			document.writeln('arr1[2] : ' + arr1[2] + '<br/>');
+			document.writeln('arr1[3] : ' + arr1[3] + '<br/>');
+			document.writeln('arr1.length : ' + arr1.length + '<br/>'); // arr1.length가 3인 이유는 인덱스 0~2까지,  인덱스가 3은 제외
+			document.writeln('<br/>');
+			
+			var arr2 = ['홍길동', '이순신', '강감찬']; // 1차원 배열
+			
+			document.writeln('arr2[0] : ' + arr2[0] + '<br/>');
+			document.writeln('arr2[1] : ' + arr2[1] + '<br/>');
+			document.writeln('arr2[2] : ' + arr2[2] + '<br/>');
+			document.writeln('arr2[3] : ' + arr2[3] + '<br/>');
+			document.writeln('arr2.length : ' + arr2.length + '<br/>');
+			document.writeln('<br/>');
+			
+			var arr3 = [
+				['을지문덕', '연개소문'],
+				['광개토대왕','세종대왕'],
+				['김유신','계백']
+			];
+			
+			document.writeln('arr3[0] : ' + arr3[0] + '<br/>');
+			document.writeln('arr3[1] : ' + arr3[1] + '<br/>');
+			document.writeln('arr3[2] : ' + arr3[2] + '<br/>');
+			document.writeln('arr3[3] : ' + arr3[3] + '<br/>');
+			document.writeln('arr3.length : ' + arr3.length + '<br/>');
+			document.writeln('<br/>');
+			
+			document.writeln('arr3[0][0] : ' + arr3[0][0] + '<br/>');
+			document.writeln('arr3[0][1] : ' + arr3[0][1] + '<br/>');
+			document.writeln('arr3[0].length : ' + arr3[0].length + '<br/>');
+			document.writeln('arr3[1][0] : ' + arr3[1][0] + '<br/>');
+			document.writeln('arr3[1][1] : ' + arr3[1][1] + '<br/>');
+			document.writeln('arr3[1].length : ' + arr3[1].length + '<br/>');
+			document.writeln('arr3[2][0] : ' + arr3[2][0] + '<br/>');
+			document.writeln('arr3[2][1] : ' + arr3[2][1] + '<br/>');
+			document.writeln('arr3[2].length : ' + arr3[2].length + '<br/>');
+			document.writeln('arr3[3][0] : ' + arr3[3][0] + '<br/>'); // arr3[3]이 undefined이기 때문에 에러 발생, 출력 X
+			document.writeln('<br/>');
+		</script>
+	</body>
+</html>

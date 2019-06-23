@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test1</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		  // 인라인 스크립트 사용
+			document.writeln('&lt;script&gt; 태그 아래의 인라인 스크립트에 의한 출력입니다. <br/>');
+		</script>
+		
+		<script type="text/javascript" src="test1.js">
+			// 외부 스크립트 사용
+		</script>
+		
+		<script type="text/javascript" src="test1.js">
+			// 외부 스크립트 내부에 인라인 스크립트 사용 시
+			document.writeln('외부 스크립트를 사용할 때에는 &lt;script&gt; 태그 아래 내용이 무시됩니다. <br/>');
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test7</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 객체 리터럴
+			var p1 = { x: 300, y : 200}; // 프로퍼티명과 프로퍼티 값을 콜론(:)으로 구분한다. 각 각의 프로퍼티들은 콤마(,)로 구분한다.
+			var p2 = { x: 350, y : 280};
+			
+			var rect = {
+					topLeft : p1,
+					bottomRight : p2,
+					size : function() { // size란 이름의 메소드
+						return (this.bottomRight.x - this.topLeft.x) * (this.bottomRight.y - this.topLeft.y); // this : rect 객체
+					}
+			};
+			
+			document.writeln('위치 변경 전 사각형의 넓이 : ' + rect.size() + '<br/>');
+			document.writeln('<br/>');
+			
+			p1 = { x : 200, y : 300};
+			p2 = { x : 300, y : 400};
+			rect.topLeft = p1; // 사각형의 좌측상단 좌표 정보 -> 좌표가 변경된 p1 객체를 참조
+			rect.bottomRight = p2; // 사각형의 우측하단 좌표 정보 -> 좌표가 변경된 p2 객체를 참조
+			
+			document.writeln('위치 변경 후 사각형의 넓이 : ' + rect.size() + '<br/>');
+			document.writeln('<br/>');
+		</script>
+	</body>
+</html>

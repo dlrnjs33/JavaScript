@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test4</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 숫자 리터럴
+			var a = 10;
+			
+			document.writeln('a : ' + a + '<br/>');
+			document.writeln('typeof a : ' + typeof a + '<br/>');
+			document.writeln('isFinite(a) : ' + isFinite(a) + '<br/>'); // isFinite : 유한한 수 인가?
+			document.writeln('isNaN(a) : ' + isNaN(a) + '<br/>');
+			document.writeln('<br/>');
+			
+			var b = 1 / 0;
+			document.writeln('b : ' + b + '<br/>');
+			document.writeln('typeof b : ' + typeof b + '<br/>');  // Infinity의 타입은 number이다.
+			document.writeln('isFinite(b) : ' + isFinite(b) + '<br/>');
+			document.writeln('isNaN(b) : ' + isNaN(b) + '<br/>');
+			document.writeln('<br/>');
+			
+			var c = 5 * "4times";
+			document.writeln('c : ' + c + '<br/>');
+			document.writeln('typeof c : ' + typeof c + '<br/>'); // NaN도 타입의 number이다.
+			document.writeln('isFinite(c) : ' + isFinite(c) + '<br/>');
+			document.writeln('isNaN(c) : ' + isNaN(c) + '<br/>');
+			document.writeln('<br/>');
+		</script>
+	</body>
+</html>
