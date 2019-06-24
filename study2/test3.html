@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test3</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var calculator;
+			
+			// 좌측 표현식이 undefined값을 가지고 있어 false로 평가되어 우측 평가식을 실행하지 않는다.
+			calculator && document.writeln('calculator.add(2, 3) : ' + calculator.add(2, 3));
+			
+			calculator = {
+					add : function(op1, op2) {
+						return op1 + op2;
+					}
+			};
+			
+			calculator && document.writeln('calculator.add(2, 3) : ' + calculator.add(2, 3));
+			
+			// 좌측 표현식이 undefined값을 가지고 있어 false로 평가되어 우측 평가식을 실행한다.
+			calculator.subtract || (calculator.subtract = function(op1, op2) {return op1 - op2;});
+			document.writeln('<br/>');
+			calculator.subtract && document.writeln('calculator.subtract(2, 3) : ' + calculator.subtract(2, 3));
+		</script>
+	</body>
+</html>

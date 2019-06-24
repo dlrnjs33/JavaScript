@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test6</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var month = 2;
+			var days;
+			
+			switch(month) {
+				case 4 :
+				case 6 :
+				case 9 :
+					case 11 : // 4월, 6월, 9월, 11월의 경우
+					days = 30;
+					break;
+				case 2 : // 2월일 경우
+					days = 28;
+					break;
+				default : // 나머지 경우
+					days = 31;
+					break;
+			}
+			
+			document.writeln(month + '월의 날짜는 ' + days + '일까지입니다.<br/>');
+			document.writeln('<br/>');
+		</script>
+	</body>
+</html>

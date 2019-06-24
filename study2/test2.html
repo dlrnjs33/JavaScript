@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test2</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var x = 5;
+			var y = 3;
+			var z = '5';
+			
+			document.writeln('x == y : ' + (x == y) + '<br/>');
+			document.writeln('x == z : ' + (x == z) + '<br/>'); // 숫자가 문자열로 변환되어 비교연산을 수행한다.
+			document.writeln('x != y : ' + (x != y) + '<br/>');
+			document.writeln('x != z : ' + (x != z) + '<br/>');
+			document.writeln('x < y : ' + (x < y) + '<br/>');
+			document.writeln('x <= y : ' + (x <= y) + '<br/>');
+			document.writeln('x > y : ' + (x > y) + '<br/>');
+			document.writeln('x >= y : ' + (x >= y) + '<br/>');
+			
+			// === 연산자는 비교연산 시 데이터 타입 변환을 수행하지 않는다.
+			document.writeln('x === z : ' + (x === z) + '<br/>');
+			document.writeln('x !== y : ' + (x !== y) + '<br/>');
+			document.writeln('x !== z : ' + (x !== z) + '<br/>');
+			document.writeln('<br/>');
+			
+			var arr1 = ['홍길동', '이순신', '강감찬'];
+			var arr2 = ['홍길동', '이순신', '강감찬'];
+			
+			// 내용은 같지만 서로 다른 객체이기 때문에 false;
+			document.writeln('arr1 == arr2 : ' + (arr1== arr2) + '<br/>');
+		</script>
+	</body>
+</html>

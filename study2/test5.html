@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test5</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var score = 88;
+			var level;
+			
+			if(score >= 90) {
+				level = 'A';
+			} else if (score >= 80) {
+				level = 'B';
+			} else if (score >= 70) {
+				level = 'C';
+			} else if (score >= 60) {
+				level = 'D';
+			} else {
+				level = 'F';
+			}
+			
+			document.writeln(score + '점은 ' + level + ' 학점입니다.<br/>');
+			document.writeln('<br/>');
+		</script>
+	</body>
+</html>
