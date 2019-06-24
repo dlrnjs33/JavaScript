@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test11</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		// 전역 레벨의 파싱 결과 전역객체에 프로퍼티 makeId()와 id가 정의된다.
+			function makeId() {
+				var lastId = 0;
+				
+				return function() { return ++lastId; };
+			}
+			
+		  // id는 함수
+			var id = makeId();
+			
+		  // makeId() 함수의 호출 객체와 id 함수의 호출 객체 간의 스코프 체인이 연결되어 있기 때문에 id 함수를 호출하여 makeId() 함수의 지역변수인 lastId에 접근할 수 있다.
+			document.writeln('id : ' + id() + '<br/>');
+			document.writeln('id : ' + id() + '<br/>');
+			document.writeln('id : ' + id() + '<br/>');
+			document.writeln('id : ' + id() + '<br/>');
+			document.writeln('id : ' + id() + '<br/>');
+			document.writeln('<br/>');
+		</script>
+	</body>
+</html>

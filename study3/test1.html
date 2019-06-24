@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test1</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		
+		  // function 문을 이용해 함수를 정의
+			function print(message) {
+				document.writeln(message);
+			}
+			
+			function println(message) {
+				document.writeln(message + '<br/>');
+			}
+			
+			function distance(p1, p2) {
+				var dX = p2.x - p1.x;
+				var dY = p2.y - p1.y;
+				return Math.sqrt(dX * dX, dY * dY);
+			}
+			
+			var pointA = { x : 25, y : 40};
+			var pointB = { x : 50, y : 80};
+			
+			print('pointA와 pointB 사이의 거리 : ');
+			println(distance(pointA, pointB));
+			
+			// 함수 리터럴을 이용해 함수를 정의
+			var square = function(leftTop, rightBottom) {
+				var width = rightBottom.x - leftTop.x;
+				var height = rightBottom.y - leftTop.y;
+				return width * height;
+			}
+			
+			print('pointA와 pointB로 구성한 사각형의 넓이 : ');
+			// 함수 리터럴이기 때문에 square라는 이름에 함수가 정의된 다음에 사용할 수 있다.
+			// 위의 square 함수 리터럴이 실행되지 않으면 square 함수는 사용할 수 없다.
+			println(square(pointA, pointB));
+			
+			// Function 생성자를 이용해 함수를 정의
+			var triangle = new Function('base', 'height', 'return(base * height) / 2;');
+			print('base와 height로 구성한 삼각형의 넓이 : ');
+			// 함수 리터럴과 마찬가지로 위에 함수가 실행되고 정의된 경우만 사용 가능하다.
+			println(triangle(30, 20));
+		</script>
+	</body>
+</html>

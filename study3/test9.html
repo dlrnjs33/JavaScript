@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test9</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		
+		// 전역 레벨의 파싱 결과 전역 객체에 프로퍼티 x와 outer가 정의된다.
+		// var y, z, inner는 전역 객체 X
+			var x = '전역 객체에 등록되어 있는 x 프로퍼티의 값';
+			
+			function outer() {
+				var y = 'outer 함수의 호출 객체에 등록되어 있는 프로퍼티의 값';
+				
+				function inner() {
+					var z = 'inner 함수의 호출 객체에 등록되어 있는 z 프로퍼티의 값';
+					document.writeln('x : ' + x + '<br/>');
+					document.writeln('y : ' + y + '<br/>');
+					document.writeln('z : ' + z + '<br/>');
+				}
+				
+				// inner()함수 호출 시 inner()함수가 outer() 함수의 스코프와 연결되어 있기 때문에 outer()함수의 y에 접근 가능하다.
+				// outer()함수 호출 시 outer()함수가 전역 스코프와 연결되어 있기 때문에 전역 객체의 x에 접근 가능하다.
+				// inner()함수는 outer() 함수와 연결되어 있고, outer() 함수는 전역 객체와 연결되어 있기 때문에 inner() 함수는 x, y, z 모두 접근 가능하다.
+				inner();
+			}
+			
+			outer();
+			
+			document.writeln('<br/>');
+		</script>
+	</body>
+</html>

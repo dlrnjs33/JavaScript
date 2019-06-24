@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test10</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function main() {
+				var array = [];
+				
+				for (var i = 0; i < 10; i++) {
+					array[i] = Math.ceil(Math.random() * 45);
+				}
+				
+				// work 함수를 호추하면서 첫 번째 매개변수로 처리할 데이터 data들, 두 번째, 세 번째 매개변수로 콜백함수 even과 odd를 전달한다.
+				work(array, even, odd);
+			}
+			
+			// 콜백함수 even
+			// 짝수가 발견될 때마다 호출될 함수로, 당시의 배열 인덱스와 원소를 출력한다.
+			function even(idx, num) {
+				// 인덱스가 0부터 시작이기 때문에 idx에 1을 더한다.
+				document.writeln((idx + 1) + '번째 데이터는 짝수 ' + num + '입니다.<br/>');
+			}
+			
+			// 콜백함수 odd
+			// 홀수가 발견될 때마다 호출될 함수로, 당시의 배열 인덱스와 원소를 출력한다.
+			function odd(idx, num) {
+				// 인덱스가 0부터 시작이기 때문에 idx에 1을 더한다.
+				document.writeln((idx + 1) + '번째 데이터는 홀수 ' + num + '입니다.<br/>');
+			}
+			
+			// 매개변수로 전달받은 배열 data에서 짝수가 발견되면 callback1을, 홀수가 발견되면 callback2를 호출한다.
+			function work(data, callback1, callback2) {
+				for (var i = 0; i < data.length; i++) {
+					if (data[i] % 2 == 0)
+						callback1(i, data[i]);
+					else
+						callback2(i, data[i]);
+				}
+			}
+			
+			main();
+		</script>
+	</body>
+</html>

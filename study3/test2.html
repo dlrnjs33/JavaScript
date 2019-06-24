@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test2</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var x = 'global x';
+			var y = 'global y';
+			
+			function func() {
+				var x = 'local x';
+				
+				// var 키워드가 없을 경우 전역스코프에 접근해 동일 이름을 가진 전역변수를 사용한다.
+				// 만일 동일 이름의 전역 변수가 없을 경우 전역변수를 새로 등록한다.
+				y = '???';
+				
+				document.writeln('x : ' + x + '<br/>');
+				document.writeln('y : ' + y + '<br/>');
+				document.writeln('<br/>');
+			}
+			
+			document.writeln('func() 호출 전<br/>');
+			document.writeln('x : ' + x + '<br/>');
+			document.writeln('y : ' + y + '<br/>');;
+			document.writeln('<br/>');
+			
+			document.writeln('func() 호출<br/>');
+			func();
+			
+			document.writeln('func() 호출 후<br/>');
+			document.writeln('x : ' + x + '<br/>');
+			// func()의 y값이 var 키워드가 없어서 전역변수가 func()의 지역변수로 변경된다. 
+			document.writeln('y : ' + y + '<br/>');;
+			document.writeln('<br/>');
+		</script>
+	</body>
+</html>

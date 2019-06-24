@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test7</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var calculator = {
+					// operate 메소드의 첫 번째 매개변수는 함수를 인자로 받는다.
+					operate : function(method, operand1, operand2) {
+						if (typeof method == 'function') {
+							if (typeof operand1 != 'number' || typeof operand2 != 'number')
+								throw new Error('operate() : 두 번째, 세 번째 매개변수는 반드시 숫자를 전달해야 합니다.');
+							return method(operand1, operand2);
+						} else
+							throw new Error('operate() : 첫 번째 매개변수로 함수를 전달해야 합니다.');
+					}
+			};
+			
+			try {
+				// calculator.operate 메소드의 첫 번째 매개변수로 익명함수(이름없는 함수)를 전달한다.
+				var result1 = calculator.operate(function(x, y){return x + y;}, 2, 3);
+				document.writeln('result1 : ' + result1 + '<br/>');
+				
+				var result2 = ccalculator.operate(function(x, y){return x + y;}, '2', 3);
+				document.writeln('result2 : ' + result2 + '<br/>');
+			} catch(e) {
+				document.writeln(e + '<br/>');
+			}
+			
+			document.writeln('<br/>');
+			
+			// 익명함수를 정의하고 바로 호출해 결과를 얻을 수 있다.
+			var result3 = (function(x, y){return x + y;})(2, 3);
+			document.writeln('result3 : ' + result3 + '<br/>');
+			document.writeln('<br/>');
+		</script>
+	</body>
+</html>
