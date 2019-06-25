@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test2</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Area() {}
+			
+			// Area 생성자 함수의 프로퍼티로 추가되어, Area 생성자 함수를 통해서만 접근가능하다.
+			Area.triangle = function(base, height) {
+				return base * height / 2;
+			};
+			
+			// Area 생성자 함수의 프로퍼티로 추가되어, Area 생성자 함수를 통해서만 접근가능하다.
+			Area.rectangle = function(width, height) {
+				return width * height;
+			};
+			
+			// Area 생성자 함수의 프로퍼티로 추가되어, Area 생성자 함수를 통해서만 접근가능하다.
+			Area.circle = function(radius) {
+				return Math.PI * Math.pow(radius, 2);
+			}
+			
+			// 위의 메소드를 사용하기 위해서는 Area. 이 붙어야 한다.
+			// Area.triangle()과 triangle()은 다른 메소드이다.
+			// -> 같은 이름인 다른 함수와 충돌문제가 사라진다.
+			document.writeln('Area.triangle(10, 6) : ' + Area.triangle(10, 6) + '<br/>');
+			document.writeln('Area.rectangle(10, 6) : ' + Area.rectangle(10, 6) + '<br/>');
+			// toFixed(2) : 소수점 두 자리까지 표시한다.
+			document.writeln('Area.circle(5) : ' + Area.circle(5).toFixed(2) + '<br/>');
+			document.writeln('<br/>');
+		</script>
+	</body>
+</html>
