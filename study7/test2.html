@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test2</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str1 = 'better tomorrow';
+			
+			document.writeln(str1.indexOf('t'), '<br/>');
+			document.writeln(str1.lastIndexOf('t'), '<br/>');
+			document.writeln(str1.indexOf('t', 3), '<br/>');
+			// 인덱스 3기준으로 역방향으로 'o'가 없기 때문에 -1을 반환한다. 
+			document.writeln(str1.lastIndexOf('o', 3), '<br/>');
+			document.writeln(str1.indexOf('mo'), '<br/>');
+			document.writeln('<br/>');
+			
+			var str2 = 'JavaScript';
+			document.writeln(str2.charAt(4), '<br/>');
+			document.writeln(str2.slice(5, 8), '<br/>');
+			document.writeln(str2.substring(5, 8), '<br/>');
+			document.writeln(str2.substr(5, 3), '<br/>');
+			document.writeln(str2.split('5'), '<br/>');
+			document.writeln('<br/>');
+			
+			document.writeln(str2.concat('프로젝트'), '<br/>');
+			document.writeln(str2.length, '<br/>');
+			document.writeln('<br/>');
+		</script>
+	</body>
+</html>

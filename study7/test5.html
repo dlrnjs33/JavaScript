@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test5</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var date = new Date(2012, 11, 10, 22, 10, 33, 500);
+			document.writeln(date, '<br/>');
+			document.writeln(date.getFullYear(), '<br/>');
+			document.writeln(date.getMonth(), '<br/>');
+			document.writeln(date.getDate(), '<br/>');
+			document.writeln(date.getDay(), '<br/>');
+			document.writeln(date.getHours(), '<br/>');
+			document.writeln(date.getMinutes(), '<br/>');
+			document.writeln(date.getSeconds(), '<br/>');
+			document.writeln(date.getMilliseconds(), '<br/>');
+			document.writeln(date.getTime(), '<br/>');
+			document.writeln('<br/>');
+			
+			var date2 = new Date();
+			date2.setFullYear(2012);
+			date2.setMonth(11);
+			date2.setDate(12);
+			date2.setHours(14);
+			date2.setMinutes(45);
+			date2.setSeconds(30);
+			date2.setMilliseconds(999);
+			document.writeln( '<br/>');
+			document.writeln(date2.toLocaleString(), '<br/>');
+			document.writeln(date2.toGMTString(), '<br/>');
+			document.writeln(date2.toUTCString(), '<br/>');
+			document.writeln(date2.toDateString(), '<br/>');
+			document.writeln(date2.toTimeString(), '<br/>');
+			document.writeln(date2.toLocaleDateString(), '<br/>');
+			document.writeln(date2.toLocaleTimeString(), '<br/>');
+			document.writeln('<br/>');
+			document.writeln(Date.parse('2012/12/08'), '<br/>');
+			document.writeln(Date.UTC(2012, 12 ,30), '<br/>');
+			document.writeln('<br/>');
+		</script>
+	</body>
+</html>
