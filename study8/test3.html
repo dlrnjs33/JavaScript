@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test3</title>
+		<script type="text/javascript">
+			function addText() {
+				var resultElement = document.getElementById('result');
+				resultElement.innerHTML = '크로스 브라우징 이벤트 리스너 구현!!!';
+			}
+			
+			function clearText() {
+				var resultElement = document.getElementById('result');
+				resultElement.innerHTML = '';
+			}
+			
+			function init() {
+				var btnClickElement = document.getElementById('btnClick');
+				var btnCancelElement = document.getElementById('btnCancel');
+				addListener(btnClickElement, 'click', addText);
+				addListener(btnCancelElement, 'click', clearText);
+			}
+			
+			// 크로스 브라우징을 고려해 구현한 이벤트 리스너 등록 함수
+			function addListener(el, ev, handler) {
+				if (el.addEventListener) {
+					//FireFox, Chrome과 같은 비 IE 웹브라우저 경우
+					el.addEventListener(ev, handler, false);
+				} else {
+					// IE 웹 브라우저의 경우
+					// 첫 번재 매개변수 경우 이벤트핸들러프로퍼티명가 들어가야하기 때문에 on을 붙여준다.
+					el.attachEvent('on' + ev, handler);
+				}
+			}
+			
+			addListener(window, 'load', init);
+		</script>
+	</head>
+	<body>
+		<form>
+			<input type = "button" id = "btnClick" value = "눌려주세요" />
+			<input type = "button" id = "btnCancel" value = "취소" />
+		</form>
+		<div id = "result">
+		</div>
+	</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test4</title>
+		<style>
+			.class1 {
+				background-color : #adff2f;
+			}
+			.class2 {
+				background-color : #dda0dd;
+			}
+		</style>
+		<script type="text/javascript">
+			// 크로스 브라우징이 적용된 이벤트 버블링 억제 함수 
+			function cancelBubbling(e) {
+				// FireFox, Chrome과 같은 비 IE 웹브라우저의 경우
+				if (e.stopPropagation) {
+					e.stopPropagation();
+				// IE 웹 브라우저의 경우
+				} else {
+					window.event.cancelBubble = true;
+				}
+			}
+			
+			function outerFunc() {
+				var resultElement = document.getElementById('result');
+				resultElement.innerHTML = 'outer에서 click 이벤트 발생';
+			}
+			
+			function innerFunc(e) {
+				var resultElement = document.getElementById('result');
+				resultElement.innerHTML = 'inner에서  click 이벤트 발생';
+				// 상위 객체로의 이벤트 버블링을 억제한다.
+				// cancelBubbling(e)을 주석처리했을 경우 내부, 외부 영역을 클릭해도 outer영역으로 나온다.
+				// -> 자식노드에서도 처리가 되었지만, outer영역과 result 영역을 같이 쓰고 있기 때문에 outer 이벤트 핸들러 실행결과만 표시된다.
+				cancelBubbling(e);
+			}
+			
+			function init() {
+				var outerElement = document.getElementById('outer');
+				var innerElement = document.getElementById('inner');
+				outerElement.className = 'class2';
+				innerElement.className = 'class1';
+				addListener(outerElement, 'click', outerFunc);
+				addListener(innerElement, 'click', innerFunc);
+			}
+			
+			function addListener(el, ev, handler) {
+				// 비 IE 웹 브라우저
+				if (el.addEventListener) {
+					el.addEventListener(ev, handler, false);
+				// IE 웹 브라우저
+				} else {
+					el.attachEvent('on' + ev, handler);
+				}
+			}
+			
+			addListener(window, 'load', init);
+		</script>
+	</head>
+	<body>
+		<div id = "outer">
+			외부영역을
+			<div id = "inner">
+				내부 영역을 클릭해보세요!!!
+			</div>
+			클릭해보세요!!!
+		</div>
+		<div id = "result">
+		</div>
+	</body>
+</html>
