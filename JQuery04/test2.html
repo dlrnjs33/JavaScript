@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test2</title>
+		<style type = "text/css">
+			.pictframe {
+				color : #AAAAAA;
+				border : 1px solid #444;
+				width : 302px; height : 235px;
+			}
+			
+			#image {
+				position : relative;
+				width : 302px; hegiht : 235px;
+				display : none;
+			}
+		</style>
+		<script src = "js/jquery-3.4.1.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				
+				$('#fadein').click(function() {
+					// 3000 : 3초
+					$('#image').fadeIn(3000);
+				});
+				
+				$('#fadeout').click(function() {
+					$('#image').fadeOut(3000);
+				});
+				
+			});
+		</script>
+	</head>
+	<body>
+		<div class="pictframe">
+			<img src="tree.jpg" id="image" />
+		</div>
+		<div>
+			<button id="fadein">페이드인</button>
+			<button id="fadeout">페이드아웃</button>
+		</div>
+	</body>
+</html>
