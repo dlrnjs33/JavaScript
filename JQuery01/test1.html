@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>test1</title>
+		<style type = "text/css">
+			div {
+				font-size : 12pt
+			}
+			
+			.header {
+				color : #000080;
+				font-size : 24pt;
+			}
+			
+			.content {
+				color : #008000;
+			}
+			
+			.footer {
+				color : #800080;
+				font-size : 14pt;
+			}
+		</style>
+		<script src = "js/jquery-3.4.1.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#header').addClass('header');
+				$('#content').addClass('content');
+				$('#footer').addClass('footer');
+			});
+		</script>
+	</head>
+	<body>
+		<div id = "header">
+			<p>jQuery</p>
+		</div>
+		<div id = "content">
+			<p>
+			jQuery는 John Resig에 의해 2006년 1월 BarCamp NYC에서 발표된
+			오픈소스 자바스크립트 프레임워크로 'Write Less, Do More' 컨셉을
+			가진 프레임워크입니다.
+			</p>
+		</div>
+		<div id = "footer">
+			<p>&copy; 2019 </p>
+		</div>
+	</body>
+</html>
